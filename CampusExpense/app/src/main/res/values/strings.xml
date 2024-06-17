@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">CampusExpense</string>
     <string name="username">UserName</string>
+    <string name="btn">button</string>
+    <string name="start">Start</string>
+    <string name="first_activity_running">First Activity Running</string>
+    <string name="first_activity_second">Test Second Activity</string>
+    <string name="agree_with_usrule">Agree with Us</string>
+    <string name="click">Click</string>
+    <string name="verify">Verify</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="male">male</string>
+    <string name="female">female</string>
 </resources>
