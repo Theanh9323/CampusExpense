@@ -18,12 +18,15 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".TestSecondActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
-            android:name=".QAGame"
+            android:name=".RegisterAccountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginAccountActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,5 +1,6 @@
 package com.example.campusexpense;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -37,16 +38,16 @@ public class QAGame extends AppCompatActivity {
             return insets;
         });
 
-        ArrayList<Integer> imgList = new ArrayList<>();
+        ArrayList<Question> imgList = new ArrayList<>();
         List<String> answerList = new LinkedList<>();
         answerList.add("licon");
         answerList.add("cadilac");
         answerList.add("mercedes");
         answerList.add("acura");
-        imgList.add(R.drawable.licon);
-        imgList.add(R.drawable.cadilac);
-        imgList.add(R.drawable.mercedes);
-        imgList.add(R.drawable.acura);
+        imgList.add(new Question("licon",R.drawable.licon));
+        imgList.add(new Question("cadilac",R.drawable.cadilac));
+        imgList.add(new Question("mercedes",R.drawable.mercedes));
+        imgList.add(new Question("acura",R.drawable.acura));
         image = findViewById(R.id.img_question);
         next = findViewById(R.id.btn_next);
         RadioButton answer1 = findViewById(R.id.rb_answer1);
@@ -60,7 +61,7 @@ public class QAGame extends AppCompatActivity {
             public void onClick(View v) {
             Collections.shuffle(answerList);
                 if(i < imgList.size()) {
-                    image.setImageResource(imgList.get(i));
+                    image.setImageResource(imgList.get(i).getImage());
                     i++;
                 }
                 int j = 0;
@@ -70,14 +71,55 @@ public class QAGame extends AppCompatActivity {
                     answer3.setText(answerList.get(j+2));
                     answer4.setText(answerList.get(j+3));
                 }
+                answer1.setBackgroundColor(Color.WHITE);
+                answer2.setBackgroundColor(Color.WHITE);
+                answer3.setBackgroundColor(Color.WHITE);
+                answer4.setBackgroundColor(Color.WHITE);
             }
         });
-
 
         answer1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                CharSequence answer = answer1.getText();
+                if(imgList.get(i).getAnswer() == answer) {
+                    answer1.setBackgroundColor(Color.GREEN);
+                } else {
+                    answer1.setBackgroundColor(Color.RED);
+                }
+            }
+        });
+        answer2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CharSequence answer = answer2.getText();
+                if(imgList.get(i).getAnswer() == answer) {
+                    answer2.setBackgroundColor(Color.GREEN);
+                } else {
+                    answer2.setBackgroundColor(Color.RED);
+                }
+            }
+        });
+        answer3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CharSequence answer = answer3.getText();
+                if(imgList.get(i).getAnswer() == answer) {
+                    answer3.setBackgroundColor(Color.GREEN);
+                } else {
+                    answer3.setBackgroundColor(Color.RED);
+                }
+            }
+        });
+        answer4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CharSequence answer = answer4.getText();
+                if(imgList.get(i).getAnswer() == answer) {
+                    answer4.setBackgroundColor(Color.GREEN);
+                } else {
+                    answer4.setBackgroundColor(Color.RED);
+                }
             }
         });
 
